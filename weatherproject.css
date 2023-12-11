@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  display: block;
+  margin: 70px 300px 80px 300px;
+}
+
+.weather {
+  border: solid;
+  border-color: purple;
+  padding-bottom: 20px;
+}
+.containerEl {
+  width: 100%;
+}
+.locationColumn {
+  float: left;
+  width: 50%;
+}
+
+.temperatureColumn {
+  float: left;
+  width: 50%;
+}
