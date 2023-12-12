@@ -1,23 +1,37 @@
+const weatherNotice = document.getElementById("weather-notice");
+const removeNotice = function () {
+  weatherNotice.classList.add("invisible");
+};
+setTimeout(removeNotice, 3000);
+
 const searchBar = document.getElementById("searchBar");
 const searchBtn = document.getElementById("searchBtn");
 
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`;
-const apiKey = `b1ada7c4514578c6bdeff83b05cf9417`;
+const apiUrlStyle = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`;
+const apiKey = `7649b28c3542d28d3b3866ddf149b2aa`;
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?&q=`;
 
-const apiLocation = `https://api.openweathermap.org/data/2.5/weather?&q=`;
-async function weatherEl(city) {
-  const response = await fetch(apiLocation + city + `&appid=${apiKey}`);
-
-  let data = response.json();
-  console.log(data);
-
-  document.querySelector(".location").innerHTML = data.name;
-  document.querySelector(".temperature").innerHTML =
-    Math.round(data.main.temp) + "°F";
-  document.querySelector(".weatherConditions").innerHTML =
-    data.weather.description;
+function weatherEl(city) {
+  const data = fetch(`${apiUrl}` + city + `&appid=${apiKey}` + `&units=metric`)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementsByClassName("city").innerHTML =
+        data.PromiseValue.name;
+      document.getElementsByClassName("temperature").innerHTML =
+        Math.round(data.main.temp) + "°F";
+      document.getElementsByClassName("weatherConditions").innerHTML =
+        data.weather.description;
+    });
 }
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault;
   weatherEl(searchBar.value);
 });
+console.log(
+  fetch(`${apiUrl}` + `seattle` + `&appid=${apiKey}` + `&units=metric`).then(
+    (response) => response.json()
+  )
+  /*.then((data) => {
+     / data.main.temp;
+    })*/
+);

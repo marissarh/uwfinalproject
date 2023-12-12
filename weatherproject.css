@@ -1,7 +1,7 @@
 body {
   text-align: center;
   display: block;
-  margin: 70px 300px 80px 300px;
+
   background-color: rgb(235, 233, 233);
 }
 main,
@@ -9,12 +9,19 @@ input {
   font-size: 18px;
   line-height: 1.4;
 }
-
+#weather-notice {
+  background-color: rgb(187, 176, 176);
+  color: purple;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 150%;
+}
 .weather {
   color: rgb(209, 179, 8);
   border: solid;
   border-color: purple;
   padding-bottom: 20px;
+  margin: 70px 300px 80px 300px;
 }
 #searchBtn {
   background-color: rgb(209, 179, 8);
@@ -25,11 +32,14 @@ input {
   border: solid;
   padding-top: 15px;
   border-color: purple;
-  margin-top: 20px;
+  margin: 70px 300px 80px 300px;
   list-style-type: none;
   color: rgb(209, 179, 8);
 }
 .location {
   padding: 20px;
   display: inline;
+}
+.invisible {
+  display: none;
 }
