@@ -2,22 +2,34 @@ body {
   text-align: center;
   display: block;
   margin: 70px 300px 80px 300px;
+  background-color: rgb(235, 233, 233);
+}
+main,
+input {
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 .weather {
+  color: rgb(209, 179, 8);
   border: solid;
   border-color: purple;
   padding-bottom: 20px;
 }
+#searchBtn {
+  background-color: rgb(209, 179, 8);
+  height: 40px;
+  width: 80px;
+}
 .containerEl {
-  width: 100%;
+  border: solid;
+  padding-top: 15px;
+  border-color: purple;
+  margin-top: 20px;
+  list-style-type: none;
+  color: rgb(209, 179, 8);
 }
-.locationColumn {
-  float: left;
-  width: 50%;
-}
-
-.temperatureColumn {
-  float: left;
-  width: 50%;
+.location {
+  padding: 20px;
+  display: inline;
 }
