@@ -29,6 +29,7 @@ input {
   width: 80px;
 }
 .containerEl {
+  display: none;
   border: solid;
   padding-top: 15px;
   border-color: purple;
@@ -36,10 +37,14 @@ input {
   list-style-type: none;
   color: rgb(209, 179, 8);
 }
-.location {
+.City {
   padding: 20px;
   display: inline;
 }
 .invisible {
   display: none;
+}
+
+.weatherConditions {
+  text-transform: capitalize;
 }

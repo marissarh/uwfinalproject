@@ -2,7 +2,7 @@ const weatherNotice = document.getElementById("weather-notice");
 const removeNotice = function () {
   weatherNotice.classList.add("invisible");
 };
-setTimeout(removeNotice, 3000);
+setTimeout(removeNotice, 2000);
 
 const searchBar = document.getElementById("searchBar");
 const searchBtn = document.getElementById("searchBtn");
@@ -22,6 +22,7 @@ function weatherEl(city) {
         data.weather[0].description;
       console.log(data);
     });
+  document.querySelector(".containerEl").style.display = "block";
 }
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault;
