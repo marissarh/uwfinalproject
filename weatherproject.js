@@ -15,8 +15,7 @@ function weatherEl(city) {
   const data = fetch(`${apiUrl}` + city + `&appid=${apiKey}` + `&units=metric`)
     .then((response) => response.json())
     .then((data) => {
-      document.getElementsByClassName("city").innerHTML =
-        data.PromiseValue.name;
+      document.getElementsByClassName("city").innerHTML = data.name;
       document.getElementsByClassName("temperature").innerHTML =
         Math.round(data.main.temp) + "°F";
       document.getElementsByClassName("weatherConditions").innerHTML =
@@ -31,7 +30,6 @@ console.log(
   fetch(`${apiUrl}` + `seattle` + `&appid=${apiKey}` + `&units=metric`).then(
     (response) => response.json()
   )
-  /*.then((data) => {
-     / data.main.temp;
-    })*/
 );
+
+console.log(const temperature=data.main.temp);
