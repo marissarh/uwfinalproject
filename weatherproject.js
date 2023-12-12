@@ -12,24 +12,18 @@ const apiKey = `7649b28c3542d28d3b3866ddf149b2aa`;
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?&q=`;
 
 function weatherEl(city) {
-  const data = fetch(`${apiUrl}` + city + `&appid=${apiKey}` + `&units=metric`)
+  fetch(`${apiUrl}` + city + `&appid=${apiKey}` + `&units=metric`)
     .then((response) => response.json())
     .then((data) => {
-      document.getElementsByClassName("city").innerHTML = data.name;
-      document.getElementsByClassName("temperature").innerHTML =
+      document.querySelector(".city").innerHTML = data.name;
+      document.querySelector(".temperature").innerHTML =
         Math.round(data.main.temp) + "°F";
-      document.getElementsByClassName("weatherConditions").innerHTML =
-        data.weather.description;
+      document.querySelector(".weatherConditions").innerHTML =
+        data.weather[0].description;
+      console.log(data);
     });
 }
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault;
   weatherEl(searchBar.value);
 });
-console.log(
-  fetch(`${apiUrl}` + `seattle` + `&appid=${apiKey}` + `&units=metric`).then(
-    (response) => response.json()
-  )
-);
-
-console.log(const temperature=data.main.temp);
