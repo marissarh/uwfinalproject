@@ -2,7 +2,7 @@ const weatherNotice = document.getElementById("weather-notice");
 const removeNotice = function () {
   weatherNotice.classList.add("invisible");
 };
-setTimeout(removeNotice, 4000);
+setTimeout(removeNotice, 3000);
 
 const searchBar = document.getElementById("searchBar");
 const searchBtn = document.getElementById("searchBtn");
