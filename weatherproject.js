@@ -24,7 +24,12 @@ function weatherEl(city) {
     });
   document.querySelector(".containerEl").style.display = "block";
 }
+
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault;
   weatherEl(searchBar.value);
+
+  if (searchBar.value === "") alert("Please enter a city.");
+
+  return false;
 });
