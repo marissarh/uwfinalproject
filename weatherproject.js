@@ -11,6 +11,8 @@ const apiUrlStyle = `https://api.openweathermap.org/data/2.5/weather?q={city nam
 const apiKey = `7649b28c3542d28d3b3866ddf149b2aa`;
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?&q=`;
 
+const cityRegex = `/^[a-zA-z] ?([a-zA-z]|[a-zA-z] )*[a-zA-z]$/`;
+
 function weatherEl(city) {
   fetch(`${apiUrl}` + city + `&appid=${apiKey}` + `&units=metric`)
     .then((response) => response.json())
@@ -24,6 +26,7 @@ function weatherEl(city) {
     });
   document.querySelector(".containerEl").style.display = "block";
 }
+
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (searchBar.value === "") alert("Please enter a city.");
